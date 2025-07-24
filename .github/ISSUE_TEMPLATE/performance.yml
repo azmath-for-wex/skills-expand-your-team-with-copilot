@@ -1,0 +1,198 @@
+name: ⚡ Performance Improvement
+description: Request optimizations to improve system speed, efficiency, or resource usage
+title: "[PERFORMANCE] "
+labels: ["performance", "optimization", "enhancement"]
+assignees: []
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for identifying a performance issue! Optimizing performance improves user experience and system efficiency.
+
+  - type: input
+    id: performance-title
+    attributes:
+      label: Performance Issue Title
+      description: A clear title describing the performance problem
+      placeholder: "Example: Activities page loads slowly with many activities"
+    validations:
+      required: true
+
+  - type: textarea
+    id: current-performance
+    attributes:
+      label: Current Performance Issue
+      description: Describe the specific performance problem you've observed
+      placeholder: |
+        Example: When there are 50+ activities in the system, the activities page takes 5-8 seconds to load completely. Users see a blank page during this time, and some users think the site is broken and refresh the page.
+
+        Specific symptoms:
+        - Page load time exceeds 5 seconds
+        - No loading indicators shown to users
+        - Browser becomes unresponsive during load
+        - High memory usage in browser dev tools
+    validations:
+      required: true
+
+  - type: textarea
+    id: performance-measurements
+    attributes:
+      label: Performance Measurements
+      description: Provide specific metrics, timings, or measurements
+      placeholder: |
+        Measured performance data:
+        - Page load time: 6.2 seconds (measured with browser dev tools)
+        - API response time: /activities endpoint takes 800ms
+        - JavaScript execution time: 4.5 seconds to render activities
+        - Memory usage: 150MB peak during page load
+        - Network requests: 45 individual image loads
+
+        Tools used for measurement:
+        - Browser Developer Tools (Network and Performance tabs)
+        - Lighthouse performance audit
+        - Manual stopwatch timing
+
+  - type: dropdown
+    id: performance-area
+    attributes:
+      label: Performance Area
+      description: Which area of the system has performance issues?
+      options:
+        - Frontend loading and rendering
+        - Backend API response times
+        - Database queries
+        - Network requests and file sizes
+        - Memory usage
+        - CPU usage
+        - Mobile device performance
+        - Large dataset handling
+    validations:
+      required: true
+
+  - type: textarea
+    id: expected-performance
+    attributes:
+      label: Expected Performance
+      description: What performance should we achieve?
+      placeholder: |
+        Performance targets:
+        - Page load time under 2 seconds
+        - API responses under 200ms
+        - Smooth scrolling and interactions (60fps)
+        - Memory usage under 50MB
+        - Good performance on mobile devices
+        - Responsive interface even with 100+ activities
+
+        User experience goals:
+        - No blank pages or long waits
+        - Clear loading indicators
+        - Immediate feedback on user actions
+    validations:
+      required: true
+
+  - type: textarea
+    id: suspected-causes
+    attributes:
+      label: Suspected Performance Bottlenecks
+      description: What do you think might be causing the performance issues?
+      placeholder: |
+        Potential causes:
+        - Large DOM manipulation when rendering many activities
+        - Multiple API calls instead of batch requests
+        - Large image files without compression or lazy loading
+        - Inefficient database queries (N+1 query problems)
+        - No caching of repeated data
+        - JavaScript blocking the main thread
+        - CSS that causes layout thrashing
+
+  - type: textarea
+    id: acceptance-criteria
+    attributes:
+      label: Acceptance Criteria
+      description: How will we know the performance improvement is successful?
+      placeholder: |
+        Performance benchmarks:
+        - [ ] Page load time reduced to under 2 seconds
+        - [ ] API response times under 200ms
+        - [ ] Lighthouse performance score above 85
+        - [ ] Smooth scrolling and interactions on mobile
+        - [ ] Memory usage stays under reasonable limits
+        - [ ] Users see loading indicators during any wait times
+        - [ ] No browser freezing or unresponsiveness
+        - [ ] Performance maintained as data size grows
+
+        Testing conditions:
+        - [ ] Test with 100+ activities loaded
+        - [ ] Test on slower devices/connections
+        - [ ] Test with concurrent users
+    validations:
+      required: true
+
+  - type: textarea
+    id: optimization-suggestions
+    attributes:
+      label: Optimization Suggestions
+      description: Ideas for improving performance
+      placeholder: |
+        Frontend optimizations:
+        - Implement virtual scrolling for large activity lists
+        - Add lazy loading for images and content
+        - Use pagination or infinite scroll
+        - Minimize DOM manipulations
+        - Add loading skeletons or spinners
+        - Optimize CSS and JavaScript bundle sizes
+
+        Backend optimizations:
+        - Add database indexing for activity queries
+        - Implement response caching
+        - Optimize database queries
+        - Add API rate limiting
+        - Use compression for API responses
+        - Implement proper error handling
+
+        Files likely to need optimization:
+        - src/static/script.js (frontend performance)
+        - src/backend/routers/activities.py (API optimization)
+        - src/backend/database.py (query optimization)
+
+  - type: checkboxes
+    id: impact-level
+    attributes:
+      label: Performance Impact Level
+      description: How severe is this performance issue?
+      options:
+        - label: Critical - System unusable for normal operations
+        - label: High - Significantly impacts user experience
+        - label: Medium - Noticeable slowdown but system is usable
+        - label: Low - Minor performance improvement opportunity
+
+  - type: textarea
+    id: testing-approach
+    attributes:
+      label: Performance Testing Approach
+      description: How should performance improvements be tested?
+      placeholder: |
+        Testing methodology:
+        - Use browser dev tools to measure before/after metrics
+        - Run Lighthouse audits for objective scoring
+        - Test with realistic data volumes (100+ activities)
+        - Test on various devices and network conditions
+        - Use automated performance regression testing if possible
+
+        Specific test cases:
+        - Load page with maximum expected data
+        - Test concurrent user scenarios
+        - Verify mobile device performance
+        - Check memory usage during extended usage
+
+  - type: textarea
+    id: additional-context
+    attributes:
+      label: Additional Context
+      description: Any other relevant performance information
+      placeholder: |
+        - System specifications where issue was observed
+        - Peak usage times when performance is critical
+        - Budget or resource constraints for optimization
+        - Related performance issues in other parts of the system
+        - Performance requirements from stakeholders

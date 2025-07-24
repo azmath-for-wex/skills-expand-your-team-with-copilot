@@ -1,0 +1,177 @@
+name: 🎨 UI/UX Improvement
+description: Request improvements to user interface design or user experience
+title: "[UI/UX] "
+labels: ["ui/ux", "enhancement", "frontend"]
+assignees: []
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for suggesting a UI/UX improvement! Good design makes the application easier and more enjoyable to use.
+
+  - type: input
+    id: ui-title
+    attributes:
+      label: UI/UX Improvement Title
+      description: A clear title describing the interface improvement
+      placeholder: "Example: Improve activity cards layout and styling"
+    validations:
+      required: true
+
+  - type: textarea
+    id: current-experience
+    attributes:
+      label: Current User Experience
+      description: Describe the current interface and what makes it difficult or unpleasant to use
+      placeholder: |
+        Example: The current activity cards are plain text lists that are hard to scan quickly. Students have difficulty:
+        - Distinguishing between different activities
+        - Seeing important information like time and location at a glance
+        - Understanding which activities have available spots
+        - Feeling engaged with the visual presentation
+    validations:
+      required: true
+
+  - type: textarea
+    id: proposed-improvement
+    attributes:
+      label: Proposed UI/UX Improvement
+      description: Describe your vision for the improved interface
+      placeholder: |
+        Example: Redesign activity cards to be more visually appealing and informative:
+        - Use card-based layout with proper spacing and shadows
+        - Add color coding for different activity types (blue for sports, green for academic, etc.)
+        - Display key information prominently (time, location, spots available)
+        - Add icons for different activity types
+        - Show visual indicators for full/available activities
+        - Improve button styling and hover effects
+    validations:
+      required: true
+
+  - type: textarea
+    id: user-impact
+    attributes:
+      label: User Impact
+      description: How will this improvement benefit users?
+      placeholder: |
+        Benefits for students:
+        - Faster browsing and decision-making
+        - More engaging and modern interface
+        - Clearer understanding of activity details
+        - Better mobile experience
+
+        Benefits for teachers:
+        - Higher student engagement with activities
+        - Reduced questions about activity details
+        - Professional appearance of the system
+    validations:
+      required: true
+
+  - type: checkboxes
+    id: improvement-areas
+    attributes:
+      label: Improvement Areas
+      description: Which aspects of the interface need improvement?
+      options:
+        - label: Visual design (colors, fonts, spacing)
+        - label: Layout and organization
+        - label: Navigation and user flow
+        - label: Mobile responsiveness
+        - label: Accessibility (screen readers, keyboard navigation)
+        - label: Loading states and feedback
+        - label: Error messages and validation
+        - label: Interactive elements (buttons, forms)
+
+  - type: textarea
+    id: design-requirements
+    attributes:
+      label: Design Requirements and Constraints
+      description: Specific design guidelines, colors, or requirements to follow
+      placeholder: |
+        Design constraints:
+        - Must work on mobile devices (responsive design)
+        - Should follow school brand colors if available
+        - Must be accessible (WCAG 2.1 AA compliance)
+        - Should load quickly on slower connections
+        - Must work across different browsers
+
+        Preferred design elements:
+        - Clean, modern aesthetic
+        - Easy-to-read fonts
+        - Clear visual hierarchy
+        - Consistent spacing and alignment
+
+  - type: textarea
+    id: acceptance-criteria
+    attributes:
+      label: Acceptance Criteria
+      description: Specific, testable criteria for this UI/UX improvement
+      placeholder: |
+        - [ ] New design is visually appealing and modern
+        - [ ] Interface is responsive and works on mobile devices
+        - [ ] All interactive elements have clear hover/focus states
+        - [ ] Color contrast meets accessibility standards
+        - [ ] Layout is consistent across different screen sizes
+        - [ ] Loading states provide appropriate user feedback
+        - [ ] Error messages are clear and helpful
+        - [ ] Users can complete tasks faster than before
+    validations:
+      required: true
+
+  - type: textarea
+    id: technical-implementation
+    attributes:
+      label: Technical Implementation Hints
+      description: Suggestions for implementing this UI/UX improvement
+      placeholder: |
+        Files likely to be modified:
+        - src/static/index.html (HTML structure)
+        - src/static/style.css or new CSS files (styling)
+        - src/static/script.js (interactive behavior)
+
+        Technical approaches:
+        - Use CSS Grid or Flexbox for card layouts
+        - Add CSS animations for smooth interactions
+        - Consider using CSS custom properties for theme colors
+        - Implement responsive design with media queries
+        - Add loading spinners or skeleton screens
+        - Use semantic HTML for better accessibility
+
+        Resources to consider:
+        - CSS frameworks (Bootstrap, Tailwind) if appropriate
+        - Icon libraries (Font Awesome, Feather icons)
+        - Google Fonts or web-safe font stacks
+
+  - type: textarea
+    id: inspiration
+    attributes:
+      label: Design Inspiration
+      description: Examples of similar interfaces or design patterns you like
+      placeholder: |
+        - Links to websites with good activity/event listings
+        - Screenshots or mockups of desired design
+        - Specific design patterns or components to emulate
+        - Color schemes or visual styles to consider
+
+  - type: checkboxes
+    id: devices-tested
+    attributes:
+      label: Devices to Test
+      description: Which devices/browsers should this be tested on?
+      options:
+        - label: Desktop Chrome/Firefox/Safari
+        - label: Mobile Chrome/Safari
+        - label: Tablet (iPad/Android)
+        - label: Screen readers (accessibility testing)
+        - label: Keyboard navigation only
+
+  - type: textarea
+    id: additional-context
+    attributes:
+      label: Additional Context
+      description: Any other relevant information about this UI/UX improvement
+      placeholder: |
+        - User feedback or complaints about current interface
+        - Usage analytics showing problem areas
+        - Business requirements or branding guidelines
+        - Timeline or deadline considerations

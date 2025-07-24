@@ -1,0 +1,130 @@
+name: ✨ Feature Request
+description: Request a new feature or enhancement for the Mergington High School system
+title: "[FEATURE] "
+labels: ["enhancement", "needs-discussion"]
+assignees: []
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for suggesting a new feature! This template will help gather all the information needed for Copilot to understand and implement your request.
+
+  - type: input
+    id: feature-title
+    attributes:
+      label: Feature Title
+      description: A clear, concise title for the new feature
+      placeholder: "Example: Add search functionality to activities page"
+    validations:
+      required: true
+
+  - type: textarea
+    id: problem-statement
+    attributes:
+      label: Problem Statement
+      description: What problem does this feature solve? Why is it needed?
+      placeholder: "Example: Currently, students have to scroll through all activities to find what they're looking for. With many activities, this becomes time-consuming and frustrating."
+    validations:
+      required: true
+
+  - type: textarea
+    id: proposed-solution
+    attributes:
+      label: Proposed Solution
+      description: Describe your proposed solution in detail
+      placeholder: |
+        Example: Add a search bar at the top of the activities page that allows students to:
+        - Search by activity name
+        - Filter by activity type (sports, academic, arts, etc.)
+        - Filter by day of the week
+        - Show only activities with available spots
+    validations:
+      required: true
+
+  - type: textarea
+    id: user-stories
+    attributes:
+      label: User Stories
+      description: Describe how different users will interact with this feature
+      placeholder: |
+        - As a student, I want to search for activities by name so I can quickly find what I'm interested in
+        - As a student, I want to filter activities by type so I can browse similar activities
+        - As a teacher, I want students to easily find activities so they participate more actively
+    validations:
+      required: true
+
+  - type: textarea
+    id: acceptance-criteria
+    attributes:
+      label: Acceptance Criteria
+      description: Specific, testable conditions that must be met for this feature to be complete
+      placeholder: |
+        - [ ] Search bar is visible at the top of the activities page
+        - [ ] Search works with partial matches (typing "foot" finds "Football")
+        - [ ] Search is case-insensitive
+        - [ ] Filter dropdown includes all activity types
+        - [ ] Filters can be combined (search + filter)
+        - [ ] Clear/reset button removes all filters
+        - [ ] Results update immediately as user types
+        - [ ] "No results found" message when search returns nothing
+    validations:
+      required: true
+
+  - type: textarea
+    id: technical-hints
+    attributes:
+      label: Technical Implementation Hints
+      description: Suggestions for how this could be implemented
+      placeholder: |
+        Frontend suggestions:
+        - Add search input and filter dropdowns to static/index.html
+        - Use JavaScript to filter the activities list dynamically
+        - Consider adding CSS for better styling
+
+        Backend suggestions:
+        - Modify the /activities endpoint to accept search and filter parameters
+        - Add filtering logic to backend/routers/activities.py
+        - Consider adding database indexes if using real database
+
+        Files likely to be modified:
+        - src/static/index.html (UI elements)
+        - src/static/script.js (search functionality)
+        - src/backend/routers/activities.py (API filtering)
+
+  - type: checkboxes
+    id: feature-type
+    attributes:
+      label: Feature Type
+      description: What type of feature is this?
+      options:
+        - label: User Interface (Frontend) enhancement
+        - label: Backend API enhancement
+        - label: Database or data structure change
+        - label: Performance improvement
+        - label: Integration with external service
+        - label: Administrative/management feature
+
+  - type: textarea
+    id: alternatives
+    attributes:
+      label: Alternative Solutions
+      description: What other approaches could solve this problem?
+      placeholder: "Example: Instead of search, we could categorize activities into tabs, or add pagination with sorting options."
+
+  - type: input
+    id: priority
+    attributes:
+      label: Priority Level
+      description: How important is this feature?
+      placeholder: "High / Medium / Low"
+
+  - type: textarea
+    id: additional-context
+    attributes:
+      label: Additional Context
+      description: Any other relevant information, mockups, or examples
+      placeholder: |
+        - Links to similar features on other websites
+        - Mockups or screenshots of desired functionality
+        - Specific design requirements or constraints
+        - Dependencies on other features or systems

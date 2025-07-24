@@ -1,0 +1,201 @@
+name: 🔒 Security Concern
+description: Report security vulnerabilities or request security improvements
+title: "[SECURITY] "
+labels: ["security", "urgent", "needs-review"]
+assignees: []
+body:
+  - type: markdown
+    attributes:
+      value: |
+        ⚠️ **Security Notice**: If this is a critical security vulnerability that could compromise user data or system integrity, please report it privately to the repository maintainers instead of creating a public issue.
+
+        This template is for non-critical security improvements and general security concerns.
+
+  - type: input
+    id: security-title
+    attributes:
+      label: Security Issue Title
+      description: A clear title describing the security concern (avoid sensitive details)
+      placeholder: "Example: User input validation missing on signup endpoint"
+    validations:
+      required: true
+
+  - type: dropdown
+    id: security-type
+    attributes:
+      label: Security Concern Type
+      description: What type of security issue is this?
+      options:
+        - Input validation and sanitization
+        - Authentication and authorization
+        - Data exposure or information leakage
+        - Cross-Site Scripting (XSS) prevention
+        - SQL injection prevention
+        - Cross-Site Request Forgery (CSRF)
+        - Session management
+        - Password security
+        - API security
+        - Configuration security
+        - Dependency vulnerabilities
+        - General security hardening
+    validations:
+      required: true
+
+  - type: textarea
+    id: security-description
+    attributes:
+      label: Security Issue Description
+      description: Describe the security concern without revealing sensitive exploit details
+      placeholder: |
+        Example: The email signup endpoint accepts any input without validation, which could allow malicious users to submit harmful data. The system should validate email formats and sanitize all user inputs before processing.
+
+        Impact:
+        - Potential for malicious data injection
+        - Could affect system stability
+        - User experience degradation with invalid data
+    validations:
+      required: true
+
+  - type: textarea
+    id: affected-components
+    attributes:
+      label: Affected Components
+      description: Which parts of the system are affected by this security concern?
+      placeholder: |
+        Affected areas:
+        - User signup functionality
+        - Email input fields
+        - Backend API endpoints
+        - Database storage
+
+        Specific files that may need security improvements:
+        - src/backend/routers/activities.py (input validation)
+        - src/static/script.js (frontend validation)
+        - src/backend/database.py (data sanitization)
+    validations:
+      required: true
+
+  - type: textarea
+    id: security-requirements
+    attributes:
+      label: Security Requirements
+      description: What security measures should be implemented?
+      placeholder: |
+        Required security measures:
+        - Email format validation using proper regex or libraries
+        - Input sanitization to prevent harmful characters
+        - Rate limiting to prevent abuse
+        - Proper error handling that doesn't expose system details
+        - Input length limits to prevent buffer overflow attacks
+
+        Security standards to follow:
+        - OWASP best practices for web application security
+        - Input validation on both frontend and backend
+        - Proper error messages that don't reveal system internals
+    validations:
+      required: true
+
+  - type: textarea
+    id: acceptance-criteria
+    attributes:
+      label: Security Acceptance Criteria
+      description: How will we verify this security issue is resolved?
+      placeholder: |
+        Security validation criteria:
+        - [ ] All user inputs are properly validated
+        - [ ] Invalid inputs are rejected with appropriate error messages
+        - [ ] No sensitive information is exposed in error messages
+        - [ ] Rate limiting prevents automated abuse
+        - [ ] Input sanitization prevents malicious data storage
+        - [ ] Security testing passes (manual and automated)
+        - [ ] Code review confirms security best practices
+        - [ ] No new security vulnerabilities introduced
+    validations:
+      required: true
+
+  - type: textarea
+    id: implementation-guidance
+    attributes:
+      label: Implementation Guidance
+      description: Suggestions for implementing security improvements
+      placeholder: |
+        Security implementation suggestions:
+
+        Frontend security:
+        - Add client-side input validation for immediate feedback
+        - Implement proper form validation patterns
+        - Use secure communication (HTTPS in production)
+
+        Backend security:
+        - Use established validation libraries (e.g., pydantic for Python)
+        - Implement proper error handling and logging
+        - Add rate limiting middleware
+        - Sanitize data before database storage
+        - Use parameterized queries to prevent injection
+
+        Testing recommendations:
+        - Test with malicious input patterns
+        - Verify error handling doesn't leak information
+        - Test rate limiting functionality
+        - Use security scanning tools if available
+
+  - type: checkboxes
+    id: security-priority
+    attributes:
+      label: Security Priority Level
+      description: How urgent is this security concern?
+      options:
+        - label: Critical - Immediate security threat requiring urgent attention
+        - label: High - Significant security risk that should be addressed soon
+        - label: Medium - Important security improvement for system hardening
+        - label: Low - General security enhancement or best practice implementation
+
+  - type: textarea
+    id: testing-approach
+    attributes:
+      label: Security Testing Approach
+      description: How should security improvements be tested?
+      placeholder: |
+        Security testing methodology:
+        - Manual testing with various input patterns
+        - Automated security scanning if tools available
+        - Code review with security focus
+        - Penetration testing for critical components
+
+        Specific test cases:
+        - Test with empty, null, and undefined inputs
+        - Test with extremely long input strings
+        - Test with special characters and escape sequences
+        - Test with malformed email addresses
+        - Test rate limiting with rapid requests
+        - Verify error messages don't expose sensitive data
+
+  - type: textarea
+    id: compliance-requirements
+    attributes:
+      label: Compliance and Standards
+      description: Any specific security standards or compliance requirements?
+      placeholder: |
+        Relevant security standards:
+        - OWASP Application Security Guidelines
+        - Educational institution data protection requirements
+        - General data privacy best practices
+        - Industry standard input validation practices
+
+        Compliance considerations:
+        - Student data protection requirements
+        - Institutional security policies
+        - Accessibility requirements for security features
+
+  - type: textarea
+    id: additional-context
+    attributes:
+      label: Additional Security Context
+      description: Any other relevant security information
+      placeholder: |
+        Additional considerations:
+        - Related security issues or patterns in the codebase
+        - Security tools or libraries already in use
+        - Institutional security policies or requirements
+        - Security incident history or concerns
+        - Integration with other systems that may affect security

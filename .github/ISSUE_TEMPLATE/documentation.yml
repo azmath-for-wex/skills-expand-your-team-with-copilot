@@ -1,0 +1,143 @@
+name: 📚 Documentation Improvement
+description: Request improvements to documentation, README files, or code comments
+title: "[DOCS] "
+labels: ["documentation", "good first issue"]
+assignees: []
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for helping improve our documentation! Clear documentation helps everyone understand and contribute to the project.
+
+  - type: input
+    id: doc-title
+    attributes:
+      label: Documentation Issue Title
+      description: A clear title describing what documentation needs improvement
+      placeholder: "Example: API endpoints documentation is incomplete"
+    validations:
+      required: true
+
+  - type: dropdown
+    id: doc-type
+    attributes:
+      label: Documentation Type
+      description: What type of documentation needs improvement?
+      options:
+        - README files
+        - API documentation
+        - Code comments
+        - Setup/installation instructions
+        - User guide or tutorial
+        - Developer guide
+        - Inline help text
+        - Error messages
+    validations:
+      required: true
+
+  - type: textarea
+    id: current-state
+    attributes:
+      label: Current State
+      description: Describe the current documentation and what's wrong or missing
+      placeholder: |
+        Example: The API documentation in /docs endpoint only shows basic examples. It's missing:
+        - Parameter descriptions for the signup endpoint
+        - Error response codes and their meanings
+        - Examples of successful responses
+        - Information about rate limiting
+    validations:
+      required: true
+
+  - type: textarea
+    id: proposed-improvement
+    attributes:
+      label: Proposed Improvement
+      description: Describe what should be added, changed, or improved
+      placeholder: |
+        Example: Update the API documentation to include:
+        1. Complete parameter descriptions for all endpoints
+        2. All possible response codes (200, 400, 404, 500)
+        3. Example responses for both success and error cases
+        4. Clear explanations of what each endpoint does
+        5. Any authentication or permission requirements
+    validations:
+      required: true
+
+  - type: textarea
+    id: target-audience
+    attributes:
+      label: Target Audience
+      description: Who will benefit from this documentation improvement?
+      placeholder: |
+        - New teachers setting up the system
+        - Students trying to understand how to use the website
+        - Developers working on the code
+        - System administrators deploying the application
+    validations:
+      required: true
+
+  - type: textarea
+    id: specific-files
+    attributes:
+      label: Specific Files to Update
+      description: Which files need to be created or modified?
+      placeholder: |
+        Files that likely need updates:
+        - README.md (main project readme)
+        - src/README.md (application-specific readme)
+        - docs/how-to-develop.md (developer documentation)
+        - Code comments in src/app.py
+        - API documentation strings in backend/routers/
+    validations:
+      required: true
+
+  - type: textarea
+    id: acceptance-criteria
+    attributes:
+      label: Acceptance Criteria
+      description: How will we know this documentation improvement is complete?
+      placeholder: |
+        - [ ] Documentation is clear and easy to understand
+        - [ ] All mentioned sections are included
+        - [ ] Examples are provided where appropriate
+        - [ ] Documentation is accurate and up-to-date
+        - [ ] No spelling or grammar errors
+        - [ ] Links work and point to correct resources
+        - [ ] Code examples (if any) are tested and working
+    validations:
+      required: true
+
+  - type: textarea
+    id: content-suggestions
+    attributes:
+      label: Content Suggestions
+      description: Specific content, examples, or language to include
+      placeholder: |
+        Example content or structure:
+        - Step-by-step instructions with numbered lists
+        - Code snippets with syntax highlighting
+        - Screenshots or diagrams if helpful
+        - Common troubleshooting section
+        - Links to related resources
+
+  - type: checkboxes
+    id: urgency
+    attributes:
+      label: Urgency Level
+      description: How urgently is this documentation needed?
+      options:
+        - label: High - Blocking users from using the system
+        - label: Medium - Users can work around missing docs
+        - label: Low - Nice to have improvement
+
+  - type: textarea
+    id: additional-context
+    attributes:
+      label: Additional Context
+      description: Any other relevant information or examples
+      placeholder: |
+        - Examples of good documentation from other projects
+        - Specific pain points experienced by users
+        - Related documentation that should be consistent
+        - Style guide or formatting requirements
