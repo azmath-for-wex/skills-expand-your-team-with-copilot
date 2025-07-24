@@ -1,0 +1,11 @@
+blank_issues_enabled: false
+contact_links:
+  - name: 💬 General Discussion
+    url: https://github.com/azmath-for-wex/skills-expand-your-team-with-copilot/discussions
+    about: Ask questions, share ideas, or discuss general topics about the Mergington High School system
+  - name: 📖 Development Guide
+    url: https://github.com/azmath-for-wex/skills-expand-your-team-with-copilot/blob/main/docs/how-to-develop.md
+    about: Learn how to set up and develop the application locally
+  - name: 🔒 Security Vulnerability
+    url: mailto:security@example.com
+    about: Report critical security vulnerabilities privately (replace with actual security contact)
